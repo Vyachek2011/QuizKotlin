@@ -6,22 +6,19 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class GameLevels : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.gamelevels)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
     }
 
-    fun OnOpenGameLevelsActivity(view: View)
-    {
-        val IntentGameLevels = Intent(this, GameLevels::class.java);
-        //MyIntent.putExtra(GameLevels.TOTAL_THIRD, 123)
-        startActivity(IntentGameLevels);
-        finish();
-    }
+    fun OnOpenMainActivity(view: View){
 
+        val IntentMainActivity = Intent(this, MainActivity::class.java);
+        startActivity(IntentMainActivity);
+    }
 }

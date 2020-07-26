@@ -47,7 +47,10 @@
             android:paddingRight="10dp"
             android:text="@string/StartButton"
             android:textColor="@color/Black95"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+
+            android:onClick="OnOpenGameLevelsActivity"
+            />
     </LinearLayout>
 
 </RelativeLayout>
