@@ -1,17 +1,16 @@
 package com.example.quizkotlin
 
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.activity.OnBackPressedDispatcher
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     var TimeBackPressed: Long = 0;
+    //var tt : Toast=Toast(this);
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +27,14 @@ class MainActivity : AppCompatActivity() {
         finish();
     }
 
-    override fun onBackPressed(): Unit  {
-        var BackToast = Toast.makeText(baseContext, "Надмите еще раз, чтобы выйти", Toast.LENGTH_SHORT);
+    override fun onBackPressed(){
 
-        if ((TimeBackPressed + 5000) > System.currentTimeMillis()) {
+        val BackToast = Toast.makeText(baseContext, "Надмите еще раз, чтобы выйти", Toast.LENGTH_SHORT);
+
+        if ((TimeBackPressed + 2000) > System.currentTimeMillis()) {
             BackToast.cancel();
             super.onBackPressed();
+            return;
         }
         else {
             BackToast.show();

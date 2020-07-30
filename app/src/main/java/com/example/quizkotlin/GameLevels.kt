@@ -20,10 +20,14 @@ class GameLevels : AppCompatActivity() {
 
         val IntentMainActivity = Intent(this, MainActivity::class.java);
         startActivity(IntentMainActivity);
+        finish();
     }
+
 
     override fun  onBackPressed(): Unit {
         val IntentMainActivity = Intent(this, MainActivity::class.java);
         startActivity(IntentMainActivity);
+        finish();
     }
+
 }
